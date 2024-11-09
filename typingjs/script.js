@@ -37,7 +37,18 @@ quoteInputElement.addEventListener('input', () => {
     displaySpeed();
     clearInterval(timerInterval); // Stop the timer
     timerStarted = false; // Reset for the next test
+
+    // Trigger confetti
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
   }
+
+  // Update progress bar
+  const progress = (arrayValue.length / arrayQuote.length) * 100;
+  document.getElementById('progressBar').style.width = `${progress}%`;
 });
 
 function displaySpeed() {
@@ -64,7 +75,6 @@ async function renderNewQuote() {
     quoteDisplayElement.appendChild(characterSpan);
   });
   quoteInputElement.value = null;
-  
 }
 
 let startTime;
@@ -83,12 +93,24 @@ function getTimerTime() {
 restartButton.addEventListener('click', () => {
   quoteInputElement.value = '';
   clearInterval(timerInterval);
-  startTimer();
+  timerElement.innerText = '0'; // Reset timer display
+  timerStarted = false; // Reset timer started flag
+
+  // Reset progress bar
+  document.getElementById('progressBar').style.width = '0%';
 });
 
 newQuoteButton.addEventListener('click', () => {
+  document.getElementById('progressBar').style.width = '0%';
+  clearInterval(timerInterval);
+  timerElement.innerText = '0'; // Reset timer display
+  timerStarted = false; // Reset timer started flag
+
   renderNewQuote();
 });
 
 renderNewQuote();
 
+document.getElementById('darkModeToggle').addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+});
