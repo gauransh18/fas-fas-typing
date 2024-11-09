@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Typing Test</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js" defer></script>
+   
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>fas fas typing</h1>
+        <div class="toggle-buttons">
+            <button id="darkModeToggle" aria-label="Toggle Dark Mode">🌓</button>
+            <button id="cutenessToggle" aria-label="Toggle Cuteness">🎀</button>
+        </div>
+    </header>
+    
+    <main>
+        <div class="timer-container">
+            <span>⏰ Time: </span><span id="timer">0</span> sec
+        </div>
+        
+        <section class="quote-section">
+            <div class="quote-display" id="quoteDisplay" aria-live="polite">Loading quote...</div>
+            <textarea id="quoteInput" class="quote-input" placeholder="Start typing here..." aria-label="Type the quote here" autofocus></textarea>
+            <div class="progress-container" aria-hidden="true">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </section>
+        
+        <div class="buttons">
+            <button id="restartButton">🔄 Restart</button>
+            <button id="newQuoteButton">✨ New Quote</button>
+        </div>
+        
+        <div class="speed-display" id="speedDisplay" hidden>
+            Your typing speed: <span id="wpm">0</span> WPM 🚀
+        </div>
+        
+        <img src="cute.png" alt="Cute Illustration" class="cute-illustration">
+        
+        <div class="sparkles"></div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Speed Typing Test 📝</p>
+    </footer>
+</body>
+</html>
