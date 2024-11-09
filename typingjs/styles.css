@@ -54,3 +54,32 @@ body,
 .quote-input:focus {
   border-color: black;
 }
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+  text-decoration: underline;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+button {
+  background-color: #a1922e;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+button:hover {
+  background-color: #f0db4f;
+}
