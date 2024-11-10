@@ -65,4 +65,4 @@ This project is licensed under the [MIT License](LICENSE).
 - **GitHub:** [gauransh18](https://github.com/gauransh18)
 
 ---
-© 2023 **fasfastyping**
+© 2024 **fasfastyping**
