@@ -51,7 +51,9 @@
 
 ### Desktop
 
-![Desktop View](https://via.placeholder.com/800x600?text=Desktop+View)
+![Screenshot 1](ss1.png)
+![Screenshot 1](ss2.png)
+![Screenshot 1](ss3.png)
 
 ## License
 
