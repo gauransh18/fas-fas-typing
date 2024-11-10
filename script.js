@@ -1,4 +1,3 @@
-const RANDOM_QUOTE_API_URL = 'http://api.quotable.io/random';
 const quoteDisplayElement = document.getElementById('quoteDisplay');
 const quoteInputElement = document.getElementById('quoteInput');
 const timerElement = document.getElementById('timer');
@@ -16,28 +15,27 @@ let startTime;
 
 async function getRandomQuote() {
     try {
-        const response = await fetch(RANDOM_QUOTE_API_URL);
+        const response = await fetch('https://dummyjson.com/quotes/random');
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        return data.content;
+        return data.quote.toLowerCase(); 
     } catch (error) {
         console.error('Failed to fetch quote:', error);
-        return 'An error occurred while fetching the quote. Please try again.';
+        return 'Error fetching quote. Please try again later.';
     }
 }
 
 async function renderNewQuote() {
     const quote = await getRandomQuote();
     quoteDisplayElement.innerHTML = '';
-    quote.split('').forEach(character => {
+    quote.split('').forEach(char => {
         const charSpan = document.createElement('span');
-        charSpan.innerText = character;
+        charSpan.innerText = char;
         quoteDisplayElement.appendChild(charSpan);
     });
-    quoteInputElement.value = '';
-    speedDisplayElement.hidden = true;
+    quoteInputElement.value = null;
     resetTimer();
     resetProgressBar();
 }
@@ -160,8 +158,9 @@ if (localStorage.getItem('cuteMode') === 'enabled') {
     cutenessToggle.textContent = '🎓';
 }
 
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     renderNewQuote();
+    // Other initialization code...
 });
 
 const speedDisplay = document.getElementById('speedDisplay');

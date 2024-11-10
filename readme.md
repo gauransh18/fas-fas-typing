@@ -15,7 +15,7 @@
 
 ## Demo
 
-[Live Demo](https://demo.com)
+[Live Demo](https://fasfastyping.web.app)
 
 ## Installation
 
@@ -52,10 +52,6 @@
 ### Desktop
 
 ![Desktop View](https://via.placeholder.com/800x600?text=Desktop+View)
-
-### Mobile
-
-![Mobile View](https://via.placeholder.com/400x800?text=Mobile+View)
 
 ## License
 
